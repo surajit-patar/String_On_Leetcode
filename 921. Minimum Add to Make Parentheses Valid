@@ -1,0 +1,17 @@
+class Solution {
+    public int minAddToMakeValid(String s) {
+        if(s.length()==0) return 0;
+        int o=0,mis=0;
+        for(int i=0;i<s.length();i++){
+            char ch=s.charAt(i);
+            if(ch=='('){
+                o++;
+            }
+            else if(ch==')' && o>0){
+                o--;
+            }
+            else mis++;
+        }
+        return o+mis;
+    }
+}
